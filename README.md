@@ -26,6 +26,11 @@ import subshift
 
 
 # load .srt file
+# all srt files should be supported (unless there's weird encoding issues)
+# multi-line subs are of course supported and cause no problems
+# 
+# the index number for each entry in .srt ignored by subshift at import
+# and automatically corrected and written at export
 
 sub = subshift.Subtitle("/path/to/subtitle.srt")
 
@@ -83,6 +88,8 @@ sub.reset()
 
 
 # to write out your new subtitles, use write
+# any subtitles shifted to a negative timestamp will be automatically ignored
+# by the write method, but this can be disabled by setting dropNegatives=False
 
 sub.write("/path/to/newsubtitle.srt")
 
