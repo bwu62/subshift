@@ -27,7 +27,7 @@ import subshift
 
 # load .srt file
 
-sub = subshift.Subtitle("/path/to/subtitle/subtitle.srt")
+sub = subshift.Subtitle("/path/to/subtitle.srt")
 
 
 # inspect subtitles
@@ -59,20 +59,31 @@ sub.shift(-3.14)   # decrease delay by 3 seconds, 140 milliseconds
 # linearly map 2 points in the file to 2 points in the video
 # input should be a single string with 4 time stamps in the HH:MM:SS.MS format
 # Also: leading and trailing zeroes, HH, and HH:MM can all be omitted
-
+# 
 # for example, to map 55 seconds to 1 min 7 sec 400 milliseconds, and also map
 # 1 hour 20 min 55 sec 300 ms to 1 hour 21 min 6 sec 950 ms, you can do:
 
 sub.linearMap("55 1:7.4 1:20:55.3 1:21:06.95")
 
+
 # Note: any delimiter except : and . can be used
 # subshift matches a regular expression to find 4 timestamps in input string
 # Also: if only 2 timestamps are found, a simple shift is done to match them
-
-
+# 
 # you can also specify the delay correction (in seconds) at two HMS timestamps
 # for example, if the subtitle is 0.5 seconds early at 1 min 20 sec 600 ms but
 # 2.8 seconds late at 1 hour 40 min 10 sec, you can do:
 
 sub.delayMap("1:20.6 0.5 1:40:10 -2.8")
 
+
+# if you mess up and want to start over, you can reset subs to original state:
+
+sub.reset()
+
+
+# to write out your new subtitles, use write
+
+sub.write("/path/to/newsubtitle.srt")
+
+```
