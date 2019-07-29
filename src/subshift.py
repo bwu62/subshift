@@ -117,8 +117,6 @@ class Subtitle:
             self.subtitles[i][0] = i+1
 
     def shift(self,s):
-        if isinstance(s,str):
-            s = hmsToMs(s)/1000
         func = lambda x: int(x+s*1000)
         self.subtitles = map(lambda x:[x[0],func(x[1]),func(x[2]),x[3]],self.subtitles)
         
