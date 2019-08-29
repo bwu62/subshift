@@ -2,7 +2,6 @@ from __future__ import division
 import re
 
 
-
 # use regex to find all HH:MM:SS.MS timestamps in string
 # n specifies how many to look for (default None finds all)
 # raises error if number found doesn't match n

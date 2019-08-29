@@ -1,8 +1,8 @@
 # subshift subtitle syncer
 
-This is a new project, check back soon for updates.
-
 Couldn't find a subtitle syncer I liked so I just wrote my own. Currently only .srt files are supported (.ass file support may be added in the future)
+
+this is a work in progress, feel free to test it, submit issues, or fork it.
 
 ## Main methods:
 
