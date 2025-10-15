@@ -1,3 +1,13 @@
+# UPDATE: deprecation
+
+I'm deprecating this project in favor of [srtfix](https://github.com/bwu62/srtfix) which is a rewritten cli-tool that's significantly simpler in code and easier to use.
+
+---
+
+---
+
+---
+
 # subshift subtitle syncer
 
 Couldn't find a subtitle syncer I liked so I just wrote my own. Currently only .srt files are supported (.ass file support may be added in the future)
